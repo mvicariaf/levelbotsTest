@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Node Authentication</title>
+   {% block css %}
+        {% include "includes/css1.html" %}
+    {% endblock %}
+    
+</head>
+<body>
+<div class="container">
+    {% block header %}
+        {% include "includes/header1.html" %}
+    {% endblock %}
+    <div class="page-header text-center">
+        <h1> Profile Page</h1>
+        <a href="/" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                    <ul id="prof">
+                        <li id="name"></li>
+                        <li id="email"> </li>
+                        <li id="game"></li>
+                        <li id="game"></li>: 
+                    </ul >
+
+            </div>
+        </div>
+
+    </div>
+    {% block footer %}
+        {% include "includes/footer.html" %}
+    {% endblock %}
+    
+    <!--links jquery & bootstrap -->
+    {% block js %}
+        {% include "includes/js1.html" %}
+    {% endblock %}
+</div>
+</body>
+</html>
