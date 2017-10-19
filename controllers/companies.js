@@ -7,8 +7,9 @@ function getCompany (req, res) {
 
 	Company.findById(companyId, (err, company) =>{
 		if (err) return res.status(500).send({message: `Error al realizar la petición: ${err}`})
+			console.log(companyId)
 		if (!company) return res.status(404).send({message: `La compañía no existe`})
-
+		console.log( company )	
 		res.status(200).send({ company })
 	})
 }

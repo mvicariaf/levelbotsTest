@@ -4,9 +4,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const CompanySchema = Schema({
-	     _id: {
-            str: String, 
-            isObjectId: Boolean }, 
      name: String, 
      permalink: String, 
      crunchbase_url: String, 
@@ -29,46 +26,23 @@ const CompanySchema = Schema({
      updated_at: String, 
      overview: String, 
      image: Object, 
-     products: { 
-             name: String, 
-             permalink: String 
-             },         
+     products: Array,         
 
-     relationships: {             
-             is_past: Boolean ,
-             title: String ,
-             person:  
-                 {first_name: String,
-                 last_name: String, 
-                 permalink: String}
-            },
-     competitions: Object,         
-     providerships: Object,
-     total_money_raised: String ,
-     funding_rounds: Object,         
-     investments: Object,
-     acquisition:{
-         price_amount: Number, 
-         price_currency_code: String, 
-         term_code: String, 
-         source_url: String, 
-         source_description: String, 
-         acquired_year: Number, 
-         acquired_month: Number, 
-         acquired_day: Number, 
-         acquiring_company: {
-             name: String, 
-             permalink: String,
-             }
-         },  
-     acquisitions: Object,
-     offices: Object,         
-     milestones: Object,         
-     video_embeds: Object,
-     screenshots: Object,        
-     external_links: Object,        
-     partners: Object
+     relationships: Array,
+     competitions: Array,         
+     providerships: Array,
+     total_money_raised: String,
+     funding_rounds: Array,         
+     investments: Array,
+     acquisition:Object,  
+     acquisitions: Array,
+     offices: Array,         
+     milestones: Array,         
+     video_embeds: Array,
+     screenshots: Array,        
+     external_links: Array,        
+     partners: Array
     
 });
-module.exports = mongoose.model('Comapny', CompanySchema)
+module.exports = mongoose.model('Comapny', CompanySchema, 'companies')
 
