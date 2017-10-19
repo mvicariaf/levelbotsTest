@@ -7,7 +7,7 @@ const api = exppress.Router()
 
 
 
-api.get('/company', companyCtrl.getCompanies) 
+api.get('/companies', companyCtrl.getCompanies) 
 api.get('/company/:companyId', companyCtrl.getCompany )
 api.post('/company', companyCtrl.saveCompany)
 api.put('/company/:profileId', companyCtrl.updateCompany)

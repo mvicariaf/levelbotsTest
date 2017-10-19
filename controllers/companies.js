@@ -15,7 +15,7 @@ function getCompany (req, res) {
 }
 
 function getCompanies (req, res) {
-	Company.find({}, (err, companies) => {
+	Company.find({}, { _id: 1, name: 1, homepage_url: 1 }, (err, companies) => {
 		if (err) return res.status(500).send({message: `Error al realizar la petición: ${err}`})
 		if (!companies) return res.status(404).send({message: `No existen compañías`})
 	
