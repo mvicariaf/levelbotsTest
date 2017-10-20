@@ -18,7 +18,7 @@ api.post('/company', companyCtrl.saveCompany)
 api.post('/company/:companyId/producto', companyCtrl.saveProduct)
 api.put('/company/:profileId', companyCtrl.updateCompany)
 api.delete('/company/:companyId', companyCtrl.deleteCompany)
-api.get('/private', auth.isAuth, function (req, res) {
+api.get('/private', auth, (req, res) => {
 	res.status(200).send({ message: 'Tienes acceso'})
 })
 
