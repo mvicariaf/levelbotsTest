@@ -3,6 +3,8 @@
 Prueba de código para la empresa LevelBots. 
 API REST que maneja una base de datos de empresas con mongodb y express con oauth para gestionar accesos a algunas de las rutas.
 
+proyecto despligado en heroku: https://levelbots-api.herokuapp.com/api/companies
+
 ## Uso de la API
 	
 Rutas disponibles en la API	
