@@ -16,7 +16,8 @@ Rutas disponibles en la API
 	PUT /company/:id => Actualiza los datos de una empresa.
 	DELETE /company/:id => Borra los datos de una empresa.
 	
-Para hacer uso de los endpoints de POST PUT y DELETE es necesario estar logeado. Para crear un usuario y logearse se definen las siguientes rutas:
+Para hacer uso de los endpoints de POST PUT y DELETE es necesario estar logeado. Para crear un usuario y logearse se definen las siguientes rutas
+
 	POST /signup => crear usuario, es necesario añadir email, nombre y contraseña al cuerpo de la petición. Esto generará un token para acceder a ciertas rutas.
 	POST /signin => logearse con usuario ya creado, es necesario especificaar email y contraseña. Al logearnos, si los datos son correctos, aparece el token para el usuario.
 
