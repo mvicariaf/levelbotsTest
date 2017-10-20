@@ -38,22 +38,8 @@ app.use(require('express-session')({
     resave: false,
     saveUninitialized: false
 }));
-app.use(express.static("./public"));
 
-/*var path = require('path');
-app.use(express.static(path.join(__dirname, 'public')));*/
 
-//normal routes
-app.get('/', (req, res) => {
-    res.render('home.html');
-});
-
-app.get('/singup', (req, res) => {
-    res.render('singup.html');
-});
-app.get('/groups', (req, res) => {
-    res.render('newgroup.html');
-});
 
 
 module.exports = app
