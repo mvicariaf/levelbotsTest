@@ -14,7 +14,7 @@ api.get('/company/:companyId/members', companyCtrl.getMembers)
 api.post('/company', companyCtrl.saveCompany)
 api.post('/company/:companyId/producto', companyCtrl.saveProduct)
 api.put('/company/:profileId', companyCtrl.updateCompany)
-api.delete('/companies/:companyId', companyCtrl.deleteCompany)
+api.delete('/company/:companyId', companyCtrl.deleteCompany)
 
 
 module.exports = api

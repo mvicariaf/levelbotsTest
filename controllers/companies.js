@@ -71,10 +71,8 @@ function saveProduct (req, res) {
 	let productName = req.body.name
 	let productPermalink = req.body.permalink
 
-	console.log(productName)
-	console.log(productPermalink)
 	Company.findByIdAndUpdate(companyId,  {$push: {"products": {name: productName, permalink: productPermalink}}}, {safe: true, upsert: true, new : true}, (err, companyUpdated) =>{
-		if (err) return res.status(500).send({message: `Error al actualizar el perfil: ${err}`})
+		if (err) return res.status(500).send({message: `Error al guardar producto: ${err}`})
 
 		res.status(200).send({ company: companyUpdated })
 	})
@@ -88,7 +86,7 @@ function updateCompany(req, res) {
 	let update = req.body
 
 	Company.findByIdAndUpdate(companyId, update, (err, companyUpdated) =>{
-		if (err) return res.status(500).send({message: `Error al actualizar el perfil: ${err}`})
+		if (err) return res.status(500).send({message: `Error al actualizar la empresa: ${err}`})
 
 		res.status(200).send({ company: companyUpdated })
 	})
@@ -102,7 +100,7 @@ function deleteCompany (req, res) {
 
 		company.remove(err =>{
 			if (err) return res.status(500).send({message: `Error al borrar el perfil: ${err}`})
-				res.status(200).send({message: 'El perfil ha sido eliminado'})
+				res.status(200).send({message: 'La empresa ha sido eliminada'})
 		})
 	})
 }

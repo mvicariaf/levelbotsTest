@@ -27,7 +27,6 @@ const CompanySchema = Schema({
      overview: String, 
      image: Object, 
      products: Array,         
-
      relationships: Array,
      competitions: Array,         
      providerships: Array,
