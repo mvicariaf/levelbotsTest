@@ -14,12 +14,15 @@ api.get('/companies', companyCtrl.getCompanies)
 api.get('/company/:companyId', companyCtrl.getCompany)
 api.get('/company/:companyId/products', companyCtrl.getProducts)
 api.get('/company/:companyId/members', companyCtrl.getMembers)
-api.post('/company', companyCtrl.saveCompany)
-api.post('/company/:companyId/producto', companyCtrl.saveProduct)
-api.put('/company/:profileId', companyCtrl.updateCompany)
-api.delete('/company/:companyId', companyCtrl.deleteCompany)
+api.post('/company',  auth,companyCtrl.saveCompany)
+api.post('/company/:companyId/producto',  auth,companyCtrl.saveProduct)
+api.put('/company/:profileId',  auth,companyCtrl.updateCompany)
+api.delete('/company/:companyId',  auth,companyCtrl.deleteCompany)
+
+api.post('/signup', userCtrl.signUp)
+api.post('/signin', userCtrl.signIn)
 api.get('/private', auth, (req, res) => {
-	res.status(200).send({ message: 'Tienes acceso'})
+	res.status(200).send({message:'Tienes acceso'})
 })
 
 module.exports = api
