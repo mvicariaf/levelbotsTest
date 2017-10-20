@@ -1,1 +1,0 @@
-$('h2').append("Bienvenido"+window.location.href.split('/')[4])
